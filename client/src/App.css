@@ -1,0 +1,296 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;500;600;700;800&display=swap');
+/* Website background */
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  color: white;
+  background:
+    radial-gradient(circle at 20% 10%, #302047, transparent 40%),
+    radial-gradient(circle at 85% 80%, #25152f, transparent 40%),
+    #090912;
+}
+
+/* Main website container */
+#root {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+#root > div {
+  width: min(100%, 1100px);
+  padding: 65px 45px;
+  background: linear-gradient(
+    145deg,
+    #211b31,
+    #11111c
+  );
+  border: 1px solid #443651;
+  border-radius: 30px;
+  box-shadow: 0 25px 80px #0008;
+}
+
+/* CineMatch logo */
+h1 {
+  font-size: clamp(42px, 7vw, 72px);
+  font-weight: 800;
+  margin: 0 0 15px;
+  background: linear-gradient(90deg, #ff416c, #ff9a44);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Homepage subtitle */
+#root > div > p {
+  font-size: 20px;
+  color: #c6bdd3;
+  margin-bottom: 38px;
+}
+
+/* Search bar */
+input {
+  width: min(100%, 410px);
+  padding: 17px 22px;
+  background: #161621;
+  border: 1px solid #544761;
+  border-radius: 14px;
+  color: white;
+  font-size: 16px;
+  outline: none;
+  transition: 0.3s;
+}
+
+input:focus {
+  border-color: #ff416c;
+  box-shadow: 0 0 18px #ff416c44;
+}
+
+/* Search button */
+button {
+  padding: 17px 30px;
+  margin: 12px;
+  border: none;
+  border-radius: 14px;
+  background: linear-gradient(90deg, #ff416c, #e50914);
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px #ff416c66;
+}
+
+/* Popular movies section */
+.movies-section {
+  margin-top: 65px;
+  padding-top: 30px;
+  border-top: 1px solid #383043;
+}
+
+.movies-section h2 {
+  font-size: 28px;
+  margin-bottom: 30px;
+}
+
+/* Movie cards layout */
+.movie-grid {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(210px, 1fr)
+  );
+  gap: 25px;
+}
+
+/* Individual movie card */
+.movie-card {
+  padding: 16px;
+  border-radius: 20px;
+  background: #242032;
+  border: 1px solid #453b53;
+  transition: 0.3s;
+  overflow: hidden;
+}
+
+/* Temporary poster-like decoration */
+.movie-card::before {
+  content: "🎬";
+  display: grid;
+  place-items: center;
+  height: 175px;
+  margin-bottom: 20px;
+  border-radius: 12px;
+  font-size: 65px;
+  background: linear-gradient(135deg, #55325f, #19142f);
+}
+
+.movie-card:nth-child(2)::before {
+  background: linear-gradient(135deg, #164b64, #221637);
+}
+
+.movie-card:nth-child(3)::before {
+  background: linear-gradient(135deg, #69402e, #24182c);
+}
+
+.movie-card:hover {
+  transform: translateY(-10px);
+  border-color: #ff416c;
+  box-shadow: 0 15px 35px #0007;
+}
+
+.movie-card h3 {
+  font-size: 20px;
+  margin: 10px 0;
+}
+
+.movie-card p {
+  font-size: 15px;
+  color: #c9bfd5;
+  margin: 10px 0;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 600px) {
+  #root {
+    padding: 20px 12px;
+  }
+
+  #root > div {
+    padding: 40px 18px;
+  }
+
+  input {
+    width: 100%;
+  }
+
+  button {
+    width: 100%;
+    margin: 14px 0;
+  }
+}
+
+/* CineMatch cinematic background */
+
+.hero {
+  background-image:
+    linear-gradient(
+      rgba(0, 0, 0, 0.55),
+      rgba(0, 0, 0, 0.80)
+    ),
+    url('/cinema-bg.jpg');
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  padding: 100px 25px;
+  border-radius: 20px;
+  text-align: center;
+}
+
+.hero p {
+  color: white;
+  font-size: 20px;
+  margin-bottom: 35px;
+}
+
+/* ===== FULL PAGE CINEMATIC BACKGROUND ===== */
+
+body {
+  margin: 0;
+  min-height: 100vh;
+
+  background-image:
+    linear-gradient(
+      rgba(0, 0, 0, 0.45),
+      rgba(0, 0, 0, 0.70)
+    ),
+    url('/cinema-bg.jpg');
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+  font-family: 'Poppins', sans-serif;
+  color: white;
+}
+
+/* Remove the old boxed background */
+#root > div {
+  width: 100%;
+  max-width: none;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+/* Keep the background visible behind hero */
+.hero {
+  background-image: none;
+  background-color: rgba(0, 0, 0, 0.20);
+}
+
+/* Cinematic CineMatch title */
+h1 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(65px, 9vw, 110px);
+  letter-spacing: 4px;
+}
+
+/* Modern headings */
+h2, h3 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+}
+
+/* Search input and button */
+input, button {
+  font-family: 'Poppins', sans-serif;
+}
+
+/* CineMatch Dark Red Logo */
+
+.hero .cinematch-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+
+  color: #9B111E;
+  -webkit-text-fill-color: #9B111E;
+  background: none;
+  font-family: 'Bebas Neue', sans-serif;
+  text-shadow: 0 2px 15px rgba(0, 0, 0, 0.5);
+}
+
+.cinematch-icon {
+  width: 0.9em;
+  height: 0.9em;
+  flex-shrink: 0;
+  color: #9B111E;
+}
+.movie-card.has-poster::before {
+  display: none;
+}
+
+.movie-poster {
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
+  border-radius: 12px;
+  display: block;
+  margin-bottom: 18px;
+}

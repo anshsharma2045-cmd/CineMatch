@@ -1,0 +1,89 @@
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100%;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* Hide old emoji when poster exists */
+.movie-card.has-poster::before {
+  display: none;
+}
+
+/* Movie poster styling */
+.movie-poster {
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
+  border-radius: 12px;
+  display: block;
+  margin-bottom: 18px;
+}
+
+.signup-page {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 30px 16px;
+  box-sizing: border-box;
+}
+
+.signup-page h2 {
+  color: white;
+  text-align: center;
+  font-size: 30px;
+  margin-bottom: 25px;
+}
+
+.signup-page form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  width: 100%;
+  max-width: 420px;
+  padding: 35px;
+  box-sizing: border-box;
+  background: rgba(25, 22, 38, 0.95);
+  border: 1px solid #493448;
+  border-radius: 20px;
+}
+
+.signup-page input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 16px;
+  border: 1px solid #514659;
+  border-radius: 10px;
+  background: #171622;
+  color: white;
+  font-size: 16px;
+}
+
+.signup-page button {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  border-radius: 10px;
+  background: #ff1744;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
